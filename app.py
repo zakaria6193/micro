@@ -51,9 +51,7 @@ def handledate(date):
     date=str(date).split(' ')[0]
     return date
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+
 #fonction qui fixe la forme de la date from "Jan 26,2020" to "datetime")
 def fixdate(date):
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -94,6 +92,10 @@ def comparedate(new):
     a_month = dateutil.relativedelta.relativedelta(months=4)
     return datedatedate.date.today() - a_month > date
 
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
 @app.route('/scrap', methods=['POST', 'GET'])
 def scrap():
     if request.method == 'GET':
@@ -131,33 +133,52 @@ def scrap():
             r = requests.get(url, headers={"User-Agent": "Opera/9.80"})
             soup = BeautifulSoup(r.content, "html.parser")
             body = soup.find('body')
-            divtuni = body.find('div', {'class': 'left current-data'})
-            tuniprice = divtuni.find('span', {'class': 'arial_26 inlineblock pid-18823-last'}).text
+            divtuni = body.find('div', {'data-test': 'instrument-header-details'})
+
+            tuniprice = divtuni.find('span', {'class': 'instrument-price_last__KQzyA'}).text
             print('tuniprice' + str(tuniprice))
-            tunichangeperc = divtuni.find('div', {'class': 'top bold inlineblock'}).find_all('span')[3].text
+            try:
+                tunichangeperc = divtuni.find('span', {
+                    'class': 'instrument-price_change-percent__19cas instrument-price_down__3dhtw'}).text.replace('(',
+                                                                                                                  '').replace(
+                    ')', '')
+            except:
+                tunichangeperc = divtuni.find('span', {
+                    'class': 'instrument-price_change-percent__19cas instrument-price_up__2-OcT'}).text.replace('(',
+                                                                                                                '').replace(
+                    ')', '')
             print('tunichangeperc' + str(tunichangeperc))
-            tuniopenlist = body.find('div', {'class': 'bottomText'}).find('ul').find_all('li')
-            tuniopen = tuniopenlist[1].find('span', {'dir': 'ltr'}).text
+
+            tuniopen = divtuni.find('div', {'class': 'trading-hours_value__2MrOn'}).text
             print('tuniopen' + str(tuniopen))
-            tunivolume = body.find('div', {'class': 'bottomText'}).find('span',
-                                                                        {'class': 'inlineblock pid-18823-volume'}).text
+            tunivolume = '-'
             print('tunivolume' + str(tunivolume))
-            tunichange = divtuni.find('div', {'class': 'top bold inlineblock'}).find_all('span')[1].text
-            for s in body.find('div', class_='inlineblock float_lang_base_1').find_all('td',
-                                                                                       class_='left bold plusIconTd elp'):
+            try:
+                tunichange = divtuni.find('span', {
+                    'class': 'instrument-price_change-value__jkuml instrument-price_down__3dhtw'}).text
+            except:
+                tunichange = divtuni.find('span', {
+                    'class': 'instrument-price_change-value__jkuml instrument-price_up__2-OcT'}).text
+            print(tunichange)
+            for s in body.find('div', class_='gainers-losers-table_table-view-container__Ima20').find_all('td',
+                                                                                                          class_='inv-link bold datatable_cell--name__link__1XAxP'):
                 dic['type'].append('Gainer')
                 dic['company'].append(s.text)
 
                 dic['links'].append(s.find('a', href=True)['href'])
 
-            for s in body.find('div', class_='inlineblock float_lang_base_2').find_all('td',
-                                                                                       class_='left bold plusIconTd elp'):
+            for s in body.find('div',
+                               class_='gainers-losers-table_table-view-container__Ima20 desktop:ml-4 mobileAndTablet:mt-4').find_all(
+                    'td',
+                    class_='datatable_cell__3gwri datatable_cell--name__CM7yd'):
                 dic['company'].append(s.text)
                 dic['links'].append(s.find('a', href=True)['href'])
                 dic['type'].append('Loser')
 
-            for s in body.find('table', class_='genTbl openTbl mostActiveStockTbl crossRatesTbl').find_all('td',
-                                                                                                           class_='left bold plusIconTd'):
+            for s in body.find('div',
+                               class_='most-active-stocks-table_most-active-stocks-table-container__2Hb6-').find_all(
+                    'td',
+                    class_='datatable_cell__3gwri datatable_cell--name__CM7yd most-active-stocks-table_second-col__1_cMR'):
                 dic['company'].append(s.text)
                 dic['links'].append(s.find('a', href=True)['href'])
                 dic['type'].append('Most Active')
@@ -465,6 +486,7 @@ def scrap():
             for i in range(len(dicdic['symbols'])):
                 dicdic['tunichange'].append(tunichange)
             print(dicdic['tunichange'][0])
+            db.child('daydata').set(dicdic)
 
             return dicdic
         except Exception as e:

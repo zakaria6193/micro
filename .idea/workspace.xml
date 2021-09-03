@@ -3,7 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="b5669c7f-6973-4bc7-91da-190440825f2f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/ARTES.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/ARTES.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/ASSAD.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/ASSAD.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/BHASS.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/BHASS.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/BNA.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/BNA.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/BTEI.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/BTEI.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/CC.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/CC.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/CIL.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/CIL.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/CITY.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/CITY.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/DH.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/DH.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/MGR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/MGR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/MPBS.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/MPBS.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/NBL.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/NBL.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/SAMAA.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/SAMAA.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/SERVI.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/SERVI.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/SFBT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/SFBT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/SIAM.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/SIAM.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/SOPAT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/SOPAT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/STPAP.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/STPAP.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/STPIL.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/STPIL.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/STVR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/STVR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/TGH.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/TGH.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/TPR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/TPR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stockmodelsxgboost/UIB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/stockmodelsxgboost/UIB.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +89,11 @@
       <workItem from="1626709222571" duration="7912000" />
       <workItem from="1626799298532" duration="2898000" />
       <workItem from="1626871873755" duration="2156000" />
-      <workItem from="1626880821253" duration="928000" />
+      <workItem from="1626880821253" duration="1530000" />
+      <workItem from="1626907465176" duration="670000" />
+      <workItem from="1626956042050" duration="2944000" />
+      <workItem from="1628077536684" duration="4443000" />
+      <workItem from="1630661970522" duration="456000" />
     </task>
     <servers />
   </component>
